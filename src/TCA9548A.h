@@ -27,7 +27,7 @@ class TCA9548A
     public:
         TCA9548A(uint8_t address = 0x70);  // Default IC Address
 
-        void begin(TwoWire &inWire = Wire); // Default TwoWire Instance
+        void begin(TwoWire &inWire = Wire, int sda_pin = -1, int scl_pin = -1); // Default TwoWire Instance
         void openChannel(uint8_t channel);
         void closeChannel(uint8_t channel);
         void writeRegister(uint8_t value);

@@ -12,10 +12,10 @@
 
 TCA9548A::TCA9548A(uint8_t address) : _address(address) {}
 
-void TCA9548A::begin(TwoWire &inWire)
+void TCA9548A::begin(TwoWire &inWire, int sda_pin, int scl_pin)
 {
     this->myWire = &inWire;
-    this->myWire->begin();
+    this->myWire->begin(sda_pin, scl_pin);
 }
 
 void TCA9548A::openChannel(uint8_t channel)
